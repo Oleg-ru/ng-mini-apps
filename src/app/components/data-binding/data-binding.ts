@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './data-binding.html',
 })
 export class DataBinding {
-  name = 'Hello from Angular 22'
+  name = 'Hello from Angular 22';
+  topic = '4 type of data binding'
 }
