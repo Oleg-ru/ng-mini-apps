@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 })
 export class DataBinding {
   name = 'Hello from Angular 22';
-  topic = '4 type of data binding'
+  topic = '4 type of data binding';
+  onSubmitClick() {
+    alert('Click button on Submit')
+  };
 }
