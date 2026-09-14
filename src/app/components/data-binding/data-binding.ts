@@ -17,6 +17,5 @@ export class DataBinding {
   onCountryChange(event: Event) {
     const selectElement = event.target as HTMLSelectElement
     alert(selectElement.value);
-    console.log('helo');
   }
 }
