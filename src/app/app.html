@@ -6,10 +6,12 @@
 
 <nav>
   <ul class="nav-list">
-    <li><a routerLink="/home">🏡 Home</a></li>
-    <li><a routerLink="/about">ℹ️ About</a></li>
-    <li><a routerLink="/contact">☎️ Contact</a></li>
-    <li><a routerLink="/products">📋 Products</a></li>
+    <li><a routerLink="">🏡 Home</a></li>
+    <li><a routerLink="pages/about">ℹ️ About</a></li>
+    <li><a routerLink="pages/contact">☎️ Contact</a></li>
+    <li><a routerLink="pages/products">📋 Products</a></li>
   </ul>
 </nav>
-<router-outlet></router-outlet>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
