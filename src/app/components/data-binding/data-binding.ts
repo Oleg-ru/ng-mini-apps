@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { JsonPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [JsonPipe],
+  imports: [JsonPipe, FormsModule],
   selector: 'app-data-binding',
   styleUrl: './data-binding.css',
   templateUrl: './data-binding.html',
