@@ -1,0 +1,142 @@
+/* Переменные для удобства */
+:host {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #e5e7eb;
+  --secondary-hover: #d1d5db;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --border: #d1d5db;
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --radius: 10px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Центрирование страницы */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Карточка */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg);
+  padding: 40px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+/* Заголовок */
+.login-title {
+  margin: 0 0 28px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Форма */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Группа полей */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Кнопки */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-login {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: var(--primary-hover);
+}
+
+.btn-register {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.btn-register:hover {
+  background: var(--secondary-hover);
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 28px 20px;
+  }
+  .login-title {
+    font-size: 24px;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+}
