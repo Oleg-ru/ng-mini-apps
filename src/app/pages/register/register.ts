@@ -11,10 +11,10 @@ export class Register {
   private router = inject(Router);
 
   onRegister() {
-
+    this.router.navigate(['login'])
   }
 
   onCancel() {
-
+    this.router.navigate(['login']);
   }
 }

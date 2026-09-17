@@ -5,12 +5,13 @@ import { Contact } from './pages/contact/contact';
 import { Products } from './pages/products/products';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
+import { NotFound } from './pages/not-found/not-found';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/login'
+    redirectTo: '/login',
   },
   {
     path: 'login',
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'pages/products',
     component: Products,
+  },
+  {
+    path: '**',
+    component: NotFound,
   },
 ];

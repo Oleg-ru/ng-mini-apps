@@ -29,3 +29,13 @@
   padding: 10px;
   border: 3px dashed gray;
 }
+
+.link-active {
+  &::after {
+    content: ' 👈';
+  }
+
+  &::before {
+    content: '👉 ';
+  }
+}
