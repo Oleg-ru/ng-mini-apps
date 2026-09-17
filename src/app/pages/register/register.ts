@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [],
@@ -6,4 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './register.css',
   templateUrl: './register.html',
 })
-export class Register {}
+export class Register {
+  private router = inject(Router);
+
+  onRegister() {
+
+  }
+
+  onCancel() {
+
+  }
+}
