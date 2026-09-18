@@ -1,4 +1,16 @@
 <div>
   <h3>📋 Products</h3>
-  <p>Products component works</p>
+<!-- Router Parameter with routerLink -->
+<!--  <nav class="list-container">-->
+<!--    <a [routerLink]="['/pages/product-details/', 101]">Notebook</a>-->
+<!--    <a [routerLink]="['/pages/product-details/', 102]">Phone</a>-->
+<!--    <a [routerLink]="['/pages/product-details/', 103]">Table</a>-->
+<!--  </nav>-->
+
+  <!-- Router Parameter with Navigate() -->
+  <nav class="list-container">
+    <button (click)="viewDetails(101)">Notebook</button>
+    <button (click)="viewDetails(102)">Phone</button>
+    <button (click)="viewDetails(103)">Table</button>
+  </nav>
 </div>
