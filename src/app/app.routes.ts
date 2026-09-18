@@ -6,6 +6,7 @@ import { Products } from './pages/products/products';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { NotFound } from './pages/not-found/not-found';
+import { ProductDetails } from './pages/product-details/product-details';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'pages/products',
     component: Products,
+  },
+  {
+    path: 'pages/product-details/:id',
+    component: ProductDetails,
   },
   {
     path: '**',
