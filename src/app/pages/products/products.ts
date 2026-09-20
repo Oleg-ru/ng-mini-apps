@@ -17,13 +17,21 @@ export class Products {
   // }
 
   // Reading Query parameters using RouterLink
-  ngOnInit() {
-    this.activatedRouter.queryParamMap.subscribe((params) => {
-      const category = params.get('category');
-      const sort = params.get('sort');
+  // ngOnInit() {
+  //   this.activatedRouter.queryParamMap.subscribe((params) => {
+  //     const category = params.get('category');
+  //     const sort = params.get('sort');
+  //     console.log(category);
+  //     console.log(sort);
+  //   });
+  // }
 
-      console.log(category);
-      console.log(sort);
+  viewDetails(category: string) {
+    this.router.navigate(['/pages/products'], {
+      queryParams: {
+        category: category,
+      },
     });
+    console.log(category);
   }
 }

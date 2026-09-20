@@ -17,9 +17,16 @@
 <!--  </nav>-->
 
   <!-- Query Parameter with routerLink -->
-  <nav class="list-container">
-    <a routerLink="/pages/products" [queryParams]="{category: 'notebook', sort: 'price'}">Notebook</a>
-    <a routerLink="/pages/products" [queryParams]="{category: 'mobile', sort: 'price'}">Mobile</a>
-    <a routerLink="/pages/products" [queryParams]="{category: 'table', sort: 'price'}">Table</a>
-  </nav>
+<!--  <nav class="list-container">-->
+<!--    <a routerLink="/pages/products" [queryParams]="{category: 'notebook', sort: 'price'}">Notebook</a>-->
+<!--    <a routerLink="/pages/products" [queryParams]="{category: 'mobile', sort: 'price'}">Mobile</a>-->
+<!--    <a routerLink="/pages/products" [queryParams]="{category: 'table', sort: 'price'}">Table</a>-->
+<!--  </nav>-->
+
+  <!-- Router Parameter with Navigate() -->
+    <nav class="list-container">
+      <button (click)="viewDetails('notebook')">Notebook</button>
+      <button (click)="viewDetails('phone')">Phone</button>
+      <button (click)="viewDetails('table')">Table</button>
+    </nav>
 </div>
