@@ -41,7 +41,8 @@ export const routes: Routes = [
   },
   {
     path: 'pages/products',
-    component: Products,
+    //component: Products,
+    loadComponent: ()=>import('./pages/products/products').then(c=>c.Products) //lazy load component
   },
   {
     path: 'pages/product-details/:id',
