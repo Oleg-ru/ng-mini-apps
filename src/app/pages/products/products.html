@@ -9,10 +9,17 @@
 <!--  </nav>-->
 
   <!-- Router Parameter with Navigate() -->
+<!--  <nav class="list-container">-->
+<!--    <button (click)="viewDetails(101)">Notebook</button>-->
+<!--    <button (click)="viewDetails(102)">Phone</button>-->
+<!--    <button (click)="viewDetails(103)">Table</button>-->
+<!--    <button (click)="viewDetails(104)">Table</button>-->
+<!--  </nav>-->
+
+  <!-- Query Parameter with routerLink -->
   <nav class="list-container">
-    <button (click)="viewDetails(101)">Notebook</button>
-    <button (click)="viewDetails(102)">Phone</button>
-    <button (click)="viewDetails(103)">Table</button>
-    <button (click)="viewDetails(104)">Table</button>
+    <a routerLink="/pages/products" [queryParams]="{category: 'notebook', sort: 'price'}">Notebook</a>
+    <a routerLink="/pages/products" [queryParams]="{category: 'mobile', sort: 'price'}">Mobile</a>
+    <a routerLink="/pages/products" [queryParams]="{category: 'table', sort: 'price'}">Table</a>
   </nav>
 </div>

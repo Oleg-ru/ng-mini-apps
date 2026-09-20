@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
@@ -9,8 +9,21 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Products {
   private router = inject(Router);
+  private activatedRouter = inject(ActivatedRoute);
 
-  viewDetails(id: number) {
-    this.router.navigate(['/pages/product-details', id])
+  //pasting Route Parameters using navigate
+  // viewDetails(id: number) {
+  //   this.router.navigate(['/pages/product-details', id])
+  // }
+
+  // Reading Query parameters using RouterLink
+  ngOnInit() {
+    this.activatedRouter.queryParamMap.subscribe((params) => {
+      const category = params.get('category');
+      const sort = params.get('sort');
+
+      console.log(category);
+      console.log(sort);
+    });
   }
 }

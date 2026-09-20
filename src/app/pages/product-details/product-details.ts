@@ -13,7 +13,7 @@ export class ProductDetails implements OnInit {
   ngOnInit() {
     this.activeRoute.paramMap.subscribe((params) => {
       const id = params.get('id');
-      alert(id);
+      console.log(id);
     });
   }
 }
