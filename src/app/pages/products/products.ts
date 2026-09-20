@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  imports: [RouterLink],
+  imports: [],
   selector: 'app-products',
   styleUrl: './products.css',
   templateUrl: './products.html',
