@@ -1,1 +1,15 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <div class="dashboard-navigate">
+    <nav>
+      <ul class="dashboard-navigate-list">
+        <li><a routerLink="dashboardHome" routerLinkActive="link-active">🏕️ Dashboard Home</a></li>
+        <li><a routerLink="profile" routerLinkActive="link-active">🧑‍🔧 Profile</a></li>
+        <li><a routerLink="settings" routerLinkActive="link-active">⚙️ Settings</a></li>
+        <li><a routerLink="orders" routerLinkActive="link-active">📦 Orders</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
