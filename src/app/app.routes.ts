@@ -7,6 +7,11 @@ import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { NotFound } from './pages/not-found/not-found';
 import { ProductDetails } from './pages/product-details/product-details';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { DashboardHome } from './pages/dashboard-home/dashboard-home';
+import { Profile } from './pages/profile/profile';
+import { Settings } from './pages/settings/settings';
+import { Orders } from './pages/orders/orders';
 
 export const routes: Routes = [
   {
@@ -41,6 +46,33 @@ export const routes: Routes = [
   {
     path: 'pages/product-details/:id',
     component: ProductDetails,
+  },
+  {
+    path: 'pages/dashboard',
+    component: Dashboard,
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboardHome',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboardHome',
+        component: DashboardHome,
+      },
+      {
+        path: 'profile',
+        component: Profile,
+      },
+      {
+        path: 'settings',
+        component: Settings,
+      },
+      {
+        path: 'orders',
+        component: Orders,
+      },
+    ],
   },
   {
     path: '**',
