@@ -6,7 +6,7 @@ import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { NotFound } from './pages/not-found/not-found';
 import { ProductDetails } from './pages/product-details/product-details';
-import { authGuard } from './guards/auth-guard';
+import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 
 export const routes: Routes = [
   {
@@ -48,7 +48,8 @@ export const routes: Routes = [
   {
     path: 'pages/dashboard',
     //component: Dashboard,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
+    canMatch: [dashboardMatchGuard],
     loadChildren:
       () =>
         import('./pages/dashboard/dashboard.routes').then(r => r.DASHBOARD_ROUTES)

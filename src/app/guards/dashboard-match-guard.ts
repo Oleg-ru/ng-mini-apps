@@ -1,13 +1,11 @@
-import { CanActivateFn, Router } from '@angular/router';
+import { CanMatchFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
 
-export const authGuard: CanActivateFn = () => {
-
+export const dashboardMatchGuard: CanMatchFn = () => {
   const router = inject(Router);
   const isLoggedIn = false;
 
-  if (isLoggedIn)
-    return true;
+  if (isLoggedIn) return true;
 
   return router.createUrlTree(['/login']);
 };
