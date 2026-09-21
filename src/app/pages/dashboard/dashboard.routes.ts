@@ -3,11 +3,13 @@ import { Dashboard } from './dashboard';
 import { DashboardHome } from '../dashboard-home/dashboard-home';
 import { Profile } from '../profile/profile';
 import { Settings } from '../settings/settings';
+import { dashChildGuard } from '../../guards/dash-child-guard';
 
 export const DASHBOARD_ROUTES: Routes = [
   {
     path: '',
     component: Dashboard,
+    canActivateChild: [dashChildGuard],
     children: [
       {
         path: '',
