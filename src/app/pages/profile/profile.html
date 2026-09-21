@@ -1,1 +1,26 @@
-<p>profile works!</p>
+<div class="profile-page">
+  <div class="profile-card">
+    <h2 class="profile-title">Profile</h2>
+
+    <label class="checkbox-label">
+      <input type="checkbox" [(ngModel)]="hasUnsavedChanges" class="checkbox-input" />
+      <span class="checkbox-box"></span>
+      <span class="checkbox-text">Внес правки?</span>
+    </label>
+
+    <p class="status">
+      Статус:
+      <strong [class.status-dirty]="hasUnsavedChanges"
+              [class.status-clean]="!hasUnsavedChanges">
+        {{ hasUnsavedChanges ? 'Есть изменения ⚠️' : 'Всё сохранено ✅' }}
+      </strong>
+    </p>
+
+    <button
+      class="btn btn-save"
+      (click)="save()"
+      [disabled]="!hasUnsavedChanges">
+      Сохранить изменения
+    </button>
+  </div>
+</div>
