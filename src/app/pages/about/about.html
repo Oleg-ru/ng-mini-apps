@@ -20,4 +20,8 @@
   <ul>
     <li *ngFor="let user of users">{{user}}</li>
   </ul>
+  <div [ngSwitch]="status">
+    <p *ngSwitchCase="'active'">Активен</p>
+    <p *ngSwitchDefault>Не активен</p>
+  </div>
 </div>
