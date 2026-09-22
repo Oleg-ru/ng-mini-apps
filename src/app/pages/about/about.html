@@ -17,5 +17,7 @@
     Structural directive
   </div>
   <p *ngIf="isLoggedIn">Welcome</p>
-
+  <ul>
+    <li *ngFor="let user of users">{{user}}</li>
+  </ul>
 </div>
