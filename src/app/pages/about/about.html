@@ -1,4 +1,13 @@
 <div>
   <h3>☎️ Contact</h3>
   <p>Contact component works</p>
+  <div>
+    Attribute directive
+  </div>
+  <div>
+    <input type="checkbox" [(ngModel)]="isActive">
+  </div>
+  <div [ngClass]="isActive? 'active': 'inactive'">
+    User status
+  </div>
 </div>
