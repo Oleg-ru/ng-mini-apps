@@ -1,4 +1,7 @@
 <div>
   <h3>🏡 Home</h3>
   <p>{{getMessage()}}</p>
+
+  <button (click)="showMessage($event)">Click me</button>
+  <input type="text" (input)="getValue($event)">
 </div>
