@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, signal, ViewChild, WritableSignal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,6 +7,14 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './home.html',
 })
 export class Home {
+  count = signal(0);
+
+  setCount() {
+    this.count.set(10)
+  }
+  updateCount() {
+    this.count.update(prev => prev * 2)
+  }
   @ViewChild('email') email!: ElementRef;
 
   getMessage() {

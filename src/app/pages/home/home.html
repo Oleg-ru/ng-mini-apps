@@ -10,4 +10,8 @@
 
   <input type="text" placeholder="Email" #email>
   <button (click)="focusInput()">Focus email input</button>
+  <div>Signal:</div>
+  <p>Count: {{count()}}</p>
+  <button (click)="setCount()">Set count 10</button>
+  <button (click)="updateCount()">Multiply count to 2</button>
 </div>
