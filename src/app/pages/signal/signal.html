@@ -1,0 +1,16 @@
+<div class="signal-page">
+  <div class="signal-card">
+    <h2 class="signal-title">Signal</h2>
+
+    <div class="count-display">
+      <span class="count-label">Count</span>
+      <span class="count-value">{{ count() }}</span>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-increment" (click)="increment()">+1</button>
+      <button class="btn btn-decrement" (click)="decrement()">−1</button>
+      <button class="btn btn-reset" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</div>

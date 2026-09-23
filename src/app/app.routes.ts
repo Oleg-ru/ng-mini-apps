@@ -7,6 +7,7 @@ import { Register } from './pages/register/register';
 import { NotFound } from './pages/not-found/not-found';
 import { ProductDetails } from './pages/product-details/product-details';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
+import { Signal } from './pages/signal/signal';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,11 @@ export const routes: Routes = [
     path: 'pages/home',
     component: Home,
   },
+
+  {
+    path: 'pages/signal',
+    component: Signal,
+  },
   {
     path: 'pages/about',
     component: About,
@@ -37,9 +43,7 @@ export const routes: Routes = [
   {
     path: 'pages/products',
     //component: Products,
-    loadComponent:
-      ()=>
-        import('./pages/products/products').then(c=>c.Products) //lazy load component
+    loadComponent: () => import('./pages/products/products').then((c) => c.Products), //lazy load component
   },
   {
     path: 'pages/product-details/:id',
@@ -50,9 +54,8 @@ export const routes: Routes = [
     //component: Dashboard,
     //canActivate: [authGuard],
     canMatch: [dashboardMatchGuard],
-    loadChildren:
-      () =>
-        import('./pages/dashboard/dashboard.routes').then(r => r.DASHBOARD_ROUTES)
+    loadChildren: () =>
+      import('./pages/dashboard/dashboard.routes').then((r) => r.DASHBOARD_ROUTES),
   },
   {
     path: '**',
