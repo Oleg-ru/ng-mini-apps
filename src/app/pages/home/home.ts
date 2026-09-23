@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,16 +7,26 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
 })
 export class Home {
+  @ViewChild('email') email!: ElementRef;
+
   getMessage() {
     return 'Home component works';
   }
 
   showMessage(event: Event) {
     console.log(event.target);
-  };
+  }
 
   getValue(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     console.log(value);
   }
+
+  showName(value: string) {
+    console.log('Value is ' + value);
+  }
+
+  focusInput() {
+    this.email.nativeElement.focus();
+  };
 }

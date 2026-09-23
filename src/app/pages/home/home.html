@@ -1,7 +1,13 @@
-<div>
+<div class="flex">
   <h3>🏡 Home</h3>
   <p>{{getMessage()}}</p>
 
   <button (click)="showMessage($event)">Click me</button>
   <input type="text" (input)="getValue($event)">
+  <input type="text" #name>
+
+  <button (click)="showName(name.value)">Submit</button>
+
+  <input type="text" placeholder="Email" #email>
+  <button (click)="focusInput()">Focus email input</button>
 </div>
