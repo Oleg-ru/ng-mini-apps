@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,10 +12,19 @@ export class Signal {
 
   price = signal(0);
   quantity = signal(2);
+
   total = computed(() => {
     return this.price() + this.quantity();
   });
 
+  isLight = signal(true);
+  constructor() {
+    effect(() => {
+      localStorage.setItem('theme', this.isLight() ? 'light' : 'dark');
+    });
+  }
+
+  //count methods
   increment() {
     this.count.set(this.count() + 1);
   }
