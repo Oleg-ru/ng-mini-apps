@@ -24,6 +24,8 @@ export class Signal {
     });
   }
 
+  readonlyCount = this.count.asReadonly();
+
   //count methods
   increment() {
     this.count.set(this.count() + 1);
