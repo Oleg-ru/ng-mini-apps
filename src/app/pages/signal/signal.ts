@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [],
+  imports: [FormsModule],
   selector: 'app-signal',
   styleUrl: './signal.css',
   templateUrl: './signal.html',
@@ -9,12 +10,18 @@ import { Component, signal } from '@angular/core';
 export class Signal {
   count = signal(0);
 
+  price = signal(0);
+  quantity = signal(2);
+  total = computed(() => {
+    return this.price() + this.quantity();
+  });
+
   increment() {
-    this.count.set(this.count() + 1)
+    this.count.set(this.count() + 1);
   }
 
   decrement() {
-    this.count.update(prev => prev - 1);
+    this.count.update((prev) => prev - 1);
   }
 
   reset() {
