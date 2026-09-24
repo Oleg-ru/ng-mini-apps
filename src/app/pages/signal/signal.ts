@@ -1,5 +1,6 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart-service';
 
 @Component({
   imports: [FormsModule],
@@ -8,6 +9,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './signal.html',
 })
 export class Signal {
+  //service
+  cartService = inject(CartService);
+
+  //methods
   count = signal(0);
 
   price = signal(0);

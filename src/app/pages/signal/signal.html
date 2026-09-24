@@ -4,6 +4,13 @@
   computed total: {{total()}}
   <input type="checkbox" [(ngModel)]="isLight">
 </div>
+<div>
+  <h3>Shopping Cart</h3>
+  <p>Cart total: {{cartService.total()}}</p>
+
+  <button (click)="cartService.changePrice(500)">Change price</button>
+  <button (click)="cartService.increaseQuantity()">+1</button>
+</div>
 <div class="signal-page">
   <div class="signal-card">
     <h2 class="signal-title">Signal</h2>
