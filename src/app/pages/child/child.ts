@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,5 +7,10 @@ import { Component, input } from '@angular/core';
   templateUrl: './child.html',
 })
 export class Child {
-  userName = input('-')
+  userName = input('-');
+  saved = output<string>();
+
+  onSave() {
+    this.saved.emit('🧒');
+  }
 }

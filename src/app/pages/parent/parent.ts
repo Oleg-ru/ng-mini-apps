@@ -8,5 +8,9 @@ import { Child } from '../child/child';
   templateUrl: './parent.html',
 })
 export class Parent {
-  userNameParent = 'Angular22_signal'
+  userNameParent = 'Angular22_signal';
+
+  handlerSave(str: string) {
+    console.log('Saved event occur from child component: ' + str);
+  }
 }
