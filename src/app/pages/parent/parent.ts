@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { Child } from '../child/child';
 
 @Component({
@@ -9,6 +9,15 @@ import { Child } from '../child/child';
 })
 export class Parent {
   userNameParent = 'Angular22_signal';
+
+  quantity = signal(1);
+
+  constructor() {
+    effect(() => {
+      console.log('Quantity updated in Parent: ' + this.quantity());
+
+    });
+  }
 
   handlerSave(str: string) {
     console.log('Saved event occur from child component: ' + str);

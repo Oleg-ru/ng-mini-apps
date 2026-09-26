@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -9,6 +9,12 @@ import { Component, input, output } from '@angular/core';
 export class Child {
   userName = input('-');
   saved = output<string>();
+
+  quantityChild = model(2);
+
+  increase() {
+    this.quantityChild.set(this.quantityChild() + 1);
+  }
 
   onSave() {
     this.saved.emit('🧒');

@@ -1,4 +1,5 @@
 <div class="parent">
   Parent Component
-  <app-child [userName]="userNameParent" (saved)="handlerSave($event)"></app-child>
+  Parent Quantity: {{quantity()}}
+  <app-child [userName]="userNameParent" (saved)="handlerSave($event)" [(quantityChild)]="quantity"></app-child>
 </div>
