@@ -8,6 +8,7 @@ import { NotFound } from './pages/not-found/not-found';
 import { ProductDetails } from './pages/product-details/product-details';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
+import { Parent } from './pages/parent/parent';
 
 export const routes: Routes = [
   {
@@ -27,7 +28,10 @@ export const routes: Routes = [
     path: 'pages/home',
     component: Home,
   },
-
+  {
+    path: 'pages/parent',
+    component: Parent,
+  },
   {
     path: 'pages/signal',
     component: Signal,
