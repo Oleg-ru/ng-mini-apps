@@ -9,7 +9,6 @@ import { Child } from '../child/child';
 })
 export class Parent {
   userNameParent = 'Angular22_signal';
-
   quantity = signal(1);
 
   constructor() {
