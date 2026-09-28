@@ -1,4 +1,4 @@
-import { Component, input, model, output } from '@angular/core';
+import { Component, input, model, output, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -18,5 +18,14 @@ export class Child {
 
   onSave() {
     this.saved.emit('🧒');
+  }
+
+  // 5. View Child
+  message = signal('Hello from child component');
+  showMessage() {
+    this.message.set('Message changed by parent component');
+  }
+  resetMessage() {
+    this.message.set('Message reset by parent component');
   }
 }

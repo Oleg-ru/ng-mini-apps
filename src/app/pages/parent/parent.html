@@ -3,5 +3,14 @@
   <p>{{cartService.notifications()}}</p>
   Parent Component
   Parent Quantity: {{quantity()}}
+  <div>
+    Message: {{childComponent()?.message()}}
+    <button (click)="childComponent()?.showMessage()">
+      Set message
+    </button>
+    <button (click)="childComponent()?.resetMessage()">
+      Reset message
+    </button>
+  </div>
   <app-child [userName]="userNameParent" (saved)="handlerSave($event)" [(quantityChild)]="quantity"></app-child>
 </div>
