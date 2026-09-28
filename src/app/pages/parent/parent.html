@@ -1,4 +1,6 @@
 <div class="parent">
+  Notification:
+  <p>{{cartService.notifications()}}</p>
   Parent Component
   Parent Quantity: {{quantity()}}
   <app-child [userName]="userNameParent" (saved)="handlerSave($event)" [(quantityChild)]="quantity"></app-child>

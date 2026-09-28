@@ -4,6 +4,8 @@ import { computed, effect, Service, signal } from '@angular/core';
 export class CartService {
   private price = signal(40);
   private quantity = signal(2);
+  private notificationCount = signal(1);
+  readonly notifications = this.notificationCount.asReadonly();
 
   public total = computed(() => {
     return this.price() * this.quantity();

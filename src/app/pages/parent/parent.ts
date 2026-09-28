@@ -1,5 +1,6 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { Child } from '../child/child';
+import { CartService } from '../../services/cart-service';
 
 @Component({
   imports: [Child],
@@ -10,6 +11,7 @@ import { Child } from '../child/child';
 export class Parent {
   userNameParent = 'Angular22_signal';
   quantity = signal(1);
+  cartService = inject(CartService);
 
   constructor() {
     effect(() => {
