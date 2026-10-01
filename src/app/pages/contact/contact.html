@@ -1,4 +1,14 @@
 <div>
   <h3>ℹ️ About</h3>
   <p>About component works</p>
+  <button (click)="loadPosts()">Get posts</button>
+  <div class="posts">
+    @for (post of posts(); track post.id) {
+      <div class="post-card">
+        <span class="post-id">#{{ post.id }}</span>
+        <h3 class="post-title">{{ post.title }}</h3>
+        <p class="post-body">{{ post.body }}</p>
+      </div>
+    }
+  </div>
 </div>

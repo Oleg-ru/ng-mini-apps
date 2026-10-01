@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { PostService } from '../../services/post-service';
+import { Post } from '../../models/post';
 
 @Component({
   imports: [],
@@ -6,4 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './contact.css',
   templateUrl: './contact.html',
 })
-export class Contact {}
+export class Contact {
+  private postService = inject(PostService);
+
+  posts = signal<Post[]>([]);
+
+  loadPosts() {
+    this.postService.getPosts().subscribe(data => this.posts.set(data));
+  }
+}
