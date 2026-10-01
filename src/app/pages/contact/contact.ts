@@ -13,7 +13,11 @@ export class Contact {
 
   posts = signal<Post[]>([]);
 
+  ngOnInit() {
+    this.loadPosts();
+  }
+
   loadPosts() {
-    this.postService.getPosts().subscribe(data => this.posts.set(data));
+    this.postService.getPosts().subscribe((data) => this.posts.set(data));
   }
 }
