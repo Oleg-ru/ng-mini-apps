@@ -12,4 +12,9 @@ export class PostService {
   getPosts() {
     return this.http.get<Post[]>(`${this.apiUrl}?_limit=5`);
   }
+
+  //POST
+  addPost(post: Omit<Post, 'id'>) {
+    return this.http.post<Post>(this.apiUrl, post);
+  }
 }
