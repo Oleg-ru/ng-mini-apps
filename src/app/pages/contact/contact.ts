@@ -20,4 +20,16 @@ export class Contact {
   loadPosts() {
     this.postService.getPosts().subscribe((data) => this.posts.set(data));
   }
+
+  createPost() {
+    const newPost = {
+      userId: 9,
+      title: 'Test title',
+      body: 'Test body',
+    };
+
+    this.postService.addPost(newPost).subscribe(data => {
+      this.posts.update(posts => [...posts, data])
+    })
+  }
 }

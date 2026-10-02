@@ -2,6 +2,7 @@
   <h3>ℹ️ About</h3>
   <p>About component works</p>
   <button (click)="loadPosts()">Get posts</button>
+  <button (click)="createPost()">Add new post</button>
   <div class="posts">
     @for (post of posts(); track post.id) {
       <div class="post-card">
