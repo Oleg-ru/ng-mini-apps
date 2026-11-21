@@ -33,7 +33,7 @@ export class Contact {
     };
 
     this.postService.addPost(newPost).subscribe((data) => {
-      this.posts.update((posts) => [...posts, data]);
+      this.postResource.update((posts) => [...(posts ?? []), data]);
     });
   }
 }
