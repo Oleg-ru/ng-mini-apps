@@ -25,6 +25,7 @@ export class Contact {
     // this.postService.getPosts().subscribe((data) => this.posts.set(data));
   }
 
+
   createPost() {
     const newPost = {
       userId: 9,
