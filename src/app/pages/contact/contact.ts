@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { PostService } from '../../services/post-service';
 import { Post } from '../../models/post';
+import { httpResource } from '@angular/common/http';
 
 @Component({
   imports: [],
@@ -14,11 +15,14 @@ export class Contact {
   posts = signal<Post[]>([]);
 
   ngOnInit() {
-    this.loadPosts();
+    // this.loadPosts();
   }
 
+  postResource = httpResource<Post[]>(() => this.postService.apiUrl);
+
   loadPosts() {
-    this.postService.getPosts().subscribe((data) => this.posts.set(data));
+    this.postResource.reload()
+    // this.postService.getPosts().subscribe((data) => this.posts.set(data));
   }
 
   createPost() {
@@ -28,8 +32,8 @@ export class Contact {
       body: 'Test body',
     };
 
-    this.postService.addPost(newPost).subscribe(data => {
-      this.posts.update(posts => [...posts, data])
-    })
+    this.postService.addPost(newPost).subscribe((data) => {
+      this.posts.update((posts) => [...posts, data]);
+    });
   }
 }

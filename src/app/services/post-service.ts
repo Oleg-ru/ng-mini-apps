@@ -6,7 +6,7 @@ import { Post } from '../models/post';
 export class PostService {
   private http = inject(HttpClient);
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  public apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   //GET
   getPosts() {
