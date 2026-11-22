@@ -9,6 +9,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // return next(modifiedReq);
 
   //JWT Authentication
+  //const postService = inject(PostService);
   const token = localStorage.getItem('token');
   if (token) {
     const authReq = req.clone({
