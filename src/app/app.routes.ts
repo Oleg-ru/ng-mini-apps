@@ -9,6 +9,7 @@ import { ProductDetails } from './pages/product-details/product-details';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
 import { Parent } from './pages/parent/parent';
+import { AngularForms } from './pages/angular-forms/angular-forms';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,10 @@ export const routes: Routes = [
   {
     path: 'pages/signal',
     component: Signal,
+  },
+  {
+    path: 'pages/angular-forms',
+    component: AngularForms,
   },
   {
     path: 'pages/about',
