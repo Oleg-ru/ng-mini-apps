@@ -69,6 +69,16 @@
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
+.form-input.ng-invalid.ng-touched {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.form-input.ng-invalid.ng-touched:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
 .submit-btn {
   margin-top: 8px;
   padding: 14px 24px;
@@ -91,4 +101,31 @@
 .submit-btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.error-message {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: errorFadeIn 0.2s ease;
+}
+
+.error-message::before {
+  content: "⚠";
+  font-size: 14px;
+}
+
+@keyframes errorFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

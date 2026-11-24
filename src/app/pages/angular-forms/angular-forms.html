@@ -4,7 +4,7 @@
     <p>Register using Angular 22 Signals Forms</p>
   </div>
 
-  <form class="form">
+  <form [formRoot]="profileForm" class="form">
     <div class="form-group">
       <label for="name">
         <span class="label-text">Name</span>
@@ -13,8 +13,18 @@
         id="name"
         type="text"
         placeholder="Enter your name"
+        [formField]="profileForm.name"
         class="form-input"
       >
+      @if (profileForm.name().touched() && profileForm.name().invalid()) {
+        @if (profileForm.name().errors().length > 0) {
+          <div class="errors">
+            @for (error of profileForm.name().errors(); track error) {
+              <p class="error-message">{{ error.message }}</p>
+            }
+          </div>
+        }
+      }
     </div>
 
     <div class="form-group">
@@ -25,8 +35,13 @@
         id="email"
         type="email"
         placeholder="Enter your email"
+        [formField]="profileForm.email"
+
         class="form-input"
       >
+      @if (profileForm.email().touched() && profileForm.email().invalid()) {
+        <p class="error-message">Please enter a valid email</p>
+      }
     </div>
 
     <div class="form-group">
@@ -37,8 +52,12 @@
         id="password"
         type="password"
         placeholder="Enter your password"
+        [formField]="profileForm.password"
         class="form-input"
       >
+      @if (profileForm.password().touched() && profileForm.password().invalid()) {
+        <p class="error-message">Password must be at least 6 characters</p>
+      }
     </div>
 
     <button type="submit" class="submit-btn">
