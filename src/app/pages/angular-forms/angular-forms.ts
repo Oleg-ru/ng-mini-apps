@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { email, form, FormField, FormRoot, minLength, required } from '@angular/forms/signals';
-import { async } from 'rxjs';
 
 @Component({
   imports: [FormField, FormRoot],
