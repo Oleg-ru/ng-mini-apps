@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './template-driven-form.css',
   templateUrl: './template-driven-form.html',
 })
-export class TemplateDrivenForm {}
+export class TemplateDrivenForm {
+
+}
