@@ -10,6 +10,7 @@ import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
 import { Parent } from './pages/parent/parent';
 import { AngularForms } from './pages/angular-forms/angular-forms';
+import { TemplateDrivenForm } from './pages/template-driven-form/template-driven-form';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     path: 'pages/angular-forms',
     component: AngularForms,
+  },
+  {
+    path: 'pages/template-driven-form',
+    component: TemplateDrivenForm,
   },
   {
     path: 'pages/about',
